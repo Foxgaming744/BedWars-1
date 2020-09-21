@@ -697,11 +697,24 @@ class Game
                  }
 
 
-             if(count($team = $this->getAliveTeams()) === 1 && count($this->players) == count($team[0]->getPlayers())){
-                 $this->winnerTeam = $team[0];
+             $team = $this->getAliveteams();
+
+                    if(count($this->players) ===
+
+1){
+
+                    $this->winner Team =
+
+$team[0];
+
+                    $this->state =
+
+self::STATE_REBOOT;
+
+               }
 
                  $this->state = self::STATE_REBOOT;
-             }
+     
 
              foreach($this->generators as $generator){
                  $generator->tick();
